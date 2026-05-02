@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #050505; /* Súper oscuro para que no se refleje en tus lentes */
+    color: #ffffff;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden; /* Evita que puedas hacer scroll por error */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* Pantalla de Selección */
+h1 {
+    font-size: 26px;
+    margin-bottom: 30px;
+    color: #aaaaaa;
+    text-align: center;
+}
+
+select {
+    width: 90%;
+    max-width: 350px;
+    padding: 18px;
+    font-size: 18px;
+    background-color: #111111;
+    color: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+/* Control de velocidad */
+.speed-control {
+    width: 90%;
+    max-width: 350px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.speed-control label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #cccccc;
+}
+
+#ppm-slider {
+    width: 100%;
+    cursor: pointer;
+    background-color: #333;
+    height: 4px;
+    border-radius: 5px;
+}
+
+#ppm-value {
+    font-weight: bold;
+    color: #2196F3;
+}
+
+button {
+    padding: 18px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 350px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.hint {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+/* Pantalla de Cuenta Regresiva */
+#countdown-number {
+    font-size: 150px;
+    font-weight: bold;
+    color: #ff4757;
+}
+
+/* Pantalla del Teleprompter */
+#text-container {
+    width: 100%;
+    height: 80%; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    position: absolute;
+    width: 90%;
+    text-align: center;
+    line-height: 1.4;
+    opacity: 0;
+}
+
+/* Difuminado arriba y abajo */
+#prompter-screen {
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+#text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 80vh;
+}
+
+/* Estilo del cronómetro */
+.timer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    letter-spacing: 1px;
+    pointer-events: none; /* Para que no interfiera con los toques */
+}

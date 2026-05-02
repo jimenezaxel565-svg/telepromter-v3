@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Teleprompter IA</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+    <div id="selection-screen" class="screen active">
+        <h1>Selecciona tu Tema</h1>
+        <select id="script-select"></select>
+        
+        <!-- Nuevo control de velocidad -->
+        <div class="speed-control">
+            <label for="ppm-slider">Velocidad (palabras por minuto): <span id="ppm-value">150</span></label>
+            <input type="range" id="ppm-slider" min="80" max="300" step="5" value="150">
+        </div>
+
+        <button id="start-btn">Iniciar Grabación</button>
+        <p class="hint">Fondo optimizado para lentes (Antirreflejo)</p>
+    </div>
+
+    <div id="countdown-screen" class="screen">
+        <div id="countdown-number">10</div>
+        <div class="hint">Prepárate y mira a la cámara...</div>
+    </div>
+
+    <div id="prompter-screen" class="screen">
+        <div id="text-container"></div>
+        <!-- Cronómetro (se crea dinámicamente con JS) -->
+    </div>
+
+    <script src="data.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
